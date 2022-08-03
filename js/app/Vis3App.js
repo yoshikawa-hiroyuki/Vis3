@@ -23,12 +23,12 @@ function requestRenderIfNotRequested() {
      */ 
     if (!this.renderRequested) {
         this.renderRequested = true;
-        window.requestAnimationFrame(renderX.bind(this));
+        window.requestAnimationFrame(redraw.bind(this));
     }
 }
 
-function renderX() {
-    /* call this function as renderX.bind(this), 'this' may be App
+function redraw() {
+    /* call this function as redraw.bind(this), 'this' may be App
      */ 
     this.renderRequested = undefined;
 
@@ -55,8 +55,9 @@ class App {
 
 	this.controls = new THREE.OrbitControls(this.camera, this.canvas);
 	this.controls.target.set(0, 0, 0);
+	this.controls.screenSpacePanning = true;
 	this.controls.update();
-
+	
 	this.scene = new THREE.Scene();
 	this.scene.background = new THREE.Color('gray')
 
@@ -80,7 +81,7 @@ class App {
     }
 
     render() {
-	renderX.bind(this)();
+	redraw.bind(this)();
     }
 
     main() {
