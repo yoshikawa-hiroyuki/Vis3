@@ -40,6 +40,14 @@
 	app.addObject(mesh);
     }
 
+    // スペースバーでcontrolsをreset
+    addEventListener('keydown', onKeyDown);
+    function onKeyDown(event) {
+	if (event.keyCode == 32) { // SPACE
+	    app.controls.reset();
+	}
+    }
+
     app.render();
   </script>
 </html>

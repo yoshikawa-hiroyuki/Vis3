@@ -3,6 +3,7 @@
 */
 'use strict';
 
+
 function resizeRendererToDisplaySize() {
     /* call this function as resizeRendererToDisplaySize.bind(this)
      * 'this' may be App
