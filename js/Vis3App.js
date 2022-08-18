@@ -1,7 +1,5 @@
-/*
-* Vis3App.js
-*/
-'use strict';
+import * as THREE from "./three.module.js";
+import { OrbitControls } from './OrbitControls.js';
 
 
 function resizeRendererToDisplaySize() {
@@ -42,7 +40,7 @@ function redraw() {
 }
 
 
-class App {
+export class App {
     constructor(canvas) {
 	this.canvas = canvas;
 	this.renderer = new THREE.WebGLRenderer({canvas});
@@ -54,7 +52,8 @@ class App {
 	this.camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 	this.camera.position.z = 2;
 
-	this.controls = new THREE.OrbitControls(this.camera, this.canvas);
+	//this.controls = new THREE.OrbitControls(this.camera, this.canvas);
+	this.controls = new OrbitControls(this.camera, this.canvas);
 	this.controls.target.set(0, 0, 0);
 	this.controls.screenSpacePanning = true;
 	this.controls.update();
