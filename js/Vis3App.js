@@ -1,5 +1,6 @@
 import * as THREE from "./three.module.js";
 import { OrbitControls } from './OrbitControls.js';
+import { GUI } from './lil-gui.module.min.js';
 
 
 function resizeRendererToDisplaySize() {
